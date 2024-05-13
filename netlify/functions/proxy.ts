@@ -46,7 +46,7 @@ export default async (request: Request, context: Context) => {
     url.searchParams.append(key, value);
   });
 
-  const headers = pickHeaders(request.headers, ["content-type", "x-api-key", "accept-encoding"]);
+  const headers = pickHeaders(request.headers, ["content-type", "x-api-key", "accept-encoding", "anthropic-version"]);
 
   const response = await fetch(url, {
     body: request.body,
